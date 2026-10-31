@@ -59,5 +59,8 @@ async function loadPhotos() {
         console.error(error);
     }
 }
+function downloadAll() {
+    window.location.href = "/download-all";
+}
 
 loadPhotos();

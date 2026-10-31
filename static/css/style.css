@@ -59,3 +59,19 @@ header h1 {
 .download-btn:hover {
     background: #444;
 }
+
+#download-all {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#download-all:hover {
+    background: #444;
+}

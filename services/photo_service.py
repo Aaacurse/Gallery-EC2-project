@@ -15,3 +15,13 @@ def get_all_photos():
     ]
     
     return sorted(photos)
+
+def get_all_photos_paths():
+    if not PHOTO_DIR.exists():
+        return []
+    
+    return [
+        file
+        for file in PHOTO_DIR.rglob("*")
+        if file.is_file() and file.suffix.lower() in ALLOWED_EXTENSIONS
+    ]
