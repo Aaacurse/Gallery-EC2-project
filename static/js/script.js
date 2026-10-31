@@ -18,22 +18,38 @@ async function loadPhotos() {
             const card = document.createElement("div");
             card.className = "photo-card";
 
-            const img = document.createElement("img");
-
             const encodedPath = photo
                 .split("/")
                 .map(encodeURIComponent)
                 .join("/");
 
+            // Image preview
+            const img = document.createElement("img");
             img.src = `/photos/${encodedPath}`;
             img.alt = photo;
             img.loading = "lazy";
 
+            // Open image in a new tab
+            const imageLink = document.createElement("a");
+            imageLink.href = `/photos/${encodedPath}`;
+            imageLink.target = "_blank";
+            imageLink.rel = "noopener noreferrer";
+
+            imageLink.appendChild(img);
+
+            // Filename
             const name = document.createElement("p");
             name.textContent = photo;
 
-            card.appendChild(img);
+            // Download link
+            const downloadLink = document.createElement("a");
+            downloadLink.href = `/download/${encodedPath}`;
+            downloadLink.textContent = "Download";
+            downloadLink.className = "download-btn";
+
+            card.appendChild(imageLink);
             card.appendChild(name);
+            card.appendChild(downloadLink);
 
             gallery.appendChild(card);
         });

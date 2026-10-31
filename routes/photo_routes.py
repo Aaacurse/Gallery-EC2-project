@@ -41,4 +41,4 @@ def download_photo(filename):
     if file_path.suffix.lower() not in ALLOWED_EXTENSIONS:
         abort(404)
         
-    return send_from_directory(PHOTO_DIR,filename,as_attachmet=True)
+    return send_from_directory(PHOTO_DIR,filename,as_attachment=True)

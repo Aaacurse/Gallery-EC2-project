@@ -45,3 +45,17 @@ header h1 {
     font-size: 13px;
     overflow-wrap: anywhere;
 }
+.download-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 14px;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.download-btn:hover {
+    background: #444;
+}
