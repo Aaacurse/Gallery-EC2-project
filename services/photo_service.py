@@ -11,7 +11,7 @@ def get_all_photos():
         return []
     
     photos=[
-        file.name for file in PHOTO_DIR.iterdir() if file.is_file() and file.suffix.lower() in ALLOWED_EXTENSIONS
+        file.relative_to(PHOTO_DIR).as_posix() for file in PHOTO_DIR.rglob("*") if file.is_file() and file.suffix.lower() in ALLOWED_EXTENSIONS
     ]
     
     return sorted(photos)
