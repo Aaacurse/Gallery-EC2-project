@@ -1,6 +1,6 @@
 from pathlib import Path
 
-PHOTO_DIR=Path(r"C:\Users\HP\Pictures\CS")
+PHOTO_DIR=Path("/home/ec2-user/gallery/photos")
 
 ALLOWED_EXTENSIONS={
     ".jpg",".jpeg",".png",".webp",".gif"
