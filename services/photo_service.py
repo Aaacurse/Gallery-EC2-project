@@ -1,6 +1,10 @@
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 
-PHOTO_DIR=Path("/home/ec2-user/gallery/photos")
+load_dotenv()
+
+PHOTO_DIR=Path(os.getenv("PHOTO_DIR","photos")).expanduser().resolve()
 
 ALLOWED_EXTENSIONS={
     ".jpg",".jpeg",".png",".webp",".gif"
