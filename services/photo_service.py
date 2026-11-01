@@ -2,7 +2,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+load_dotenv(override=True)
 
 PHOTO_DIR=Path(os.getenv("PHOTO_DIR","photos")).expanduser().resolve()
 
